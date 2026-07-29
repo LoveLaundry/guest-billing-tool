@@ -1,12 +1,29 @@
+import { useEffect, useState } from 'react'
 import './App.css'
+import LoveLoader from './components/ui/LoveLoader'
+import Dashboard from './pages/Dashboard'
+import Header from './components/Header'
 
 function App() {
+    const [isLoading, setIsLoading] = useState(true);
 
-  return (
-    <div>
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 3000);
 
-    </div>
-  )
+      return () => clearTimeout(timer);
+    }, []);
+
+    return (
+      <div className="w-full min-h-screen flex justify-center items-center">
+        { isLoading && <LoveLoader/> }
+        <div className="w-full min-h-screen flex flex-col items-center justify-center">
+          <Header/>
+          <Dashboard/>
+        </div>
+      </div>
+    )
 }
 
 export default App
