@@ -16,7 +16,7 @@ function App() {
     }, []);
 
     return (
-      <div className="w-full min-h-screen flex justify-center items-center">
+      <div className="font-montserrat w-full min-h-screen flex justify-center items-center">
         { isLoading && <LoveLoader/> }
         <div className="w-full min-h-screen flex flex-col items-center justify-center">
           <Header/>

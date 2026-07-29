@@ -1,7 +1,7 @@
 const Dashboard = () => {
   return (
-    <div className="w-full min-h-full flex flex-col flex-grow justify-center items-center">
-        <div className="w-full flex flex-1">
+    <div className="w-full min-h-full flex gap-1 flex-col flex-grow justify-center items-center">
+        <div className="w-full flex flex-1 gap-1">
             <div className="bg-black w-full flex-1 flex justify-center items-center text-white text-2xl font-bold">
               Bill Book
             </div>
@@ -9,7 +9,7 @@ const Dashboard = () => {
               Add a Bill
             </div>
         </div>
-        <div className="w-full flex flex-1">
+        <div className="w-full flex flex-1 gap-1">
             <div className="bg-green-500 w-full flex-1 flex justify-center items-center text-white text-2xl font-bold">
               Analytics
             </div>
