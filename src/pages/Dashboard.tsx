@@ -1,10 +1,10 @@
 import { useState } from "react";
 import HoverTabItem from "../components/ui/HoverTabItem";
+import PopupBox from "../components/ui/PopupBox";
 
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState<string>('billBook');
+  const [activeTab, setActiveTab] = useState<string | null>(null);
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
-
   const handleHover = (tab: string | null) => {
     setHoveredTab(tab);
     //alert(`Activated ${activeTab}`);
@@ -15,7 +15,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="w-full min-h-full border-2 p-1 flex gap-1 flex-col flex-grow justify-center items-center">
+    <div className="w-full h-full border-2 p-1 flex gap-1 flex-col flex-grow justify-center items-center">
         <div className="w-full flex flex-1 gap-1">
             <div onClick={()=>handleTabClick('billBook')} onPointerEnter={()=>handleHover("billBook")} onPointerLeave={()=>handleHover(null)} className="overflow-hidden relative bg-black cursor-pointer w-full flex-1 flex justify-center items-center text-white text-2xl font-bold">
               {hoveredTab === "billBook" ? null : "Bill Book"}
@@ -36,6 +36,9 @@ const Dashboard = () => {
               {hoveredTab === "quotation" && <HoverTabItem tab={hoveredTab}/>}
             </div>
         </div>
+        {activeTab !=null && 
+          PopupBox({children: <div className="w-full h-full flex justify-center items-center text-2xl font-bold">{activeTab}</div>, onClose: ()=>setActiveTab(null)})
+        }
     </div>
   )
 }
