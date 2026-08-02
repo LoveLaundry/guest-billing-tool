@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HoverTabItem from "../components/ui/HoverTabItem";
 import PopupBox from "../components/ui/PopupBox";
+import Bill from "../components/Bill";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
@@ -37,7 +38,7 @@ const Dashboard = () => {
             </div>
         </div>
         {activeTab !=null && 
-          PopupBox({children: <div className="w-full h-full flex justify-center items-center text-2xl font-bold">{activeTab}</div>, onClose: ()=>setActiveTab(null)})
+          PopupBox({children: <div className="w-full h-full flex justify-center items-center">{<Bill/>}</div>, onClose: ()=>setActiveTab(null)})
         }
     </div>
   )
