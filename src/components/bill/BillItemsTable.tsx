@@ -1,3 +1,5 @@
+import { sampleBillInfo } from "../../data/constants";
+
 const BillItemsTable=()=>{
     return(
         <div className="text-sm w-full h-full">
@@ -10,8 +12,8 @@ const BillItemsTable=()=>{
             </div>
             <div>
                 {
-                    Array.from({ length: 15 }).map((_, index) => (
-                        <BillItem key={index} index={index} description={`Item ${index + 1}`} qty={index + 1} rate={(index + 1) * 10} />
+                    sampleBillInfo.items.map((item, index) => (
+                        <BillItem key={index} index={index} description={item.itemName} qty={item.quantity} rate={item.price} />
                     ))
                 }
             </div>

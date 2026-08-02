@@ -10,7 +10,7 @@ const Bill=()=>{
             <div className="w-full h-full flex justify-center items-center text-2xl font-bold">
                 <BillItemsTable/>
             </div>
-            <div className="w-full h-full flex justify-center items-center text-2xl font-bold">
+            <div className="w-full h-fit flex justify-center items-center text-2xl font-bold">
                 <BillFooter/>
             </div>
             <div className="w-full h-fit text-xs font-bold flex justify-center items-center text-2xl font-bold">
