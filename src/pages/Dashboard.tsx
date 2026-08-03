@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import HoverTabItem from "../components/ui/HoverTabItem";
 import PopupBox from "../components/ui/PopupBox";
 import Bill from "../components/Bill";

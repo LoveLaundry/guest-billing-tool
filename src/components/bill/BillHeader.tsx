@@ -5,12 +5,12 @@ const BillHeader=()=>{
         <div className="w-full h-fit flex flex-col gap-2 justify-center items-center text-2xl font-bold">
             <div className="w-full h-fit flex items-center gap-2">
                 <div className="flex flex-col justify-between items-center">
-                    <img src="/icon.png" alt="Logo" className="h-20 w-auto" />
+                    <img src="/icon.png" alt="Logo" className="h-20 w-28" />
                     <div className="text-center text-xs font-pacifico">Love Laundry</div>
                 </div>
                 <div className="text-center w-full text-3xl">Love Laundry <br></br> and dry cleaning experts</div>
             </div>
-            <ul className="list-disc list-inside pl-0 w-full h-fit flex flex-wrap justify-center items-center gap-1 text-sm">
+            <ul className="list-disc list-inside pl-0 w-full h-fit flex flex-wrap justify-center items-center gap-1 text-xs">
                 <div className="w-full h-fit flex justify-between items-center gap-4">
                     <li>Dry Cleaning</li>
                     <li>Free Pickup & Delivery</li>
@@ -21,7 +21,7 @@ const BillHeader=()=>{
                     <li>Laundered Pressed</li>
                 </div>
             </ul>
-            <div className="w-full h-fit flex justify-between items-center text-sm">
+            <div className="w-full h-fit flex justify-between items-center text-xs">
                 <div>
                     <div>
                         Tel: 077-2400919 / 071-2978922

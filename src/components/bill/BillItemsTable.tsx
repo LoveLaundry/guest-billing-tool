@@ -4,16 +4,21 @@ const BillItemsTable=()=>{
     return(
         <div className="text-sm w-full h-full">
             <div className="flex flex-row items-center justify-center w-full">
-                <div className="border w-full text-center">Description of Item</div>
-                <div className="border w-20 text-center">QTY</div>
-                <div className="border w-24 text-center">Rate</div>
-                <div className="border w-36 text-center">Amount</div>
-                <div className="border w-16 text-center">CTs.</div>
+                <div className="border w-full text-center h-[22px]">Description of Item</div>
+                <div className="border w-20 text-center h-[22px]">QTY</div>
+                <div className="border w-24 text-center h-[22px]">Rate</div>
+                <div className="border w-36 text-center h-[22px]">Amount</div>
+                <div className="border w-16 text-center h-[22px]">CTs.</div>
             </div>
             <div>
                 {
                     sampleBillInfo.items.map((item, index) => (
                         <BillItem key={index} index={index} description={item.itemName} qty={item.quantity} rate={item.price} />
+                    ))
+                }
+                {
+                    sampleBillInfo.items.length<15 && Array(15-sampleBillInfo.items.length).fill(0).map((_,index) =>(
+                        <BillItem key={sampleBillInfo.items.length + index} index={sampleBillInfo.items.length + index} description={''} qty={null} rate={null} />
                     ))
                 }
             </div>
@@ -26,14 +31,14 @@ const BillItemsTable=()=>{
 
 export default BillItemsTable;
 
-const BillItem=({ index, description, qty, rate }: { index: number; description: string; qty: number; rate: number })=>{
+const BillItem=({ index, description, qty, rate }: { index: number; description: string | null; qty: number | null; rate: number | null })=>{
     return(
         <div className="flex flex-row items-center justify-center w-full">
-            <div className="w-full border"><span className="px-2">{index + 1}.</span> {description}</div>
-            <div className="w-20 text-center border">{qty}</div>
-            <div className="w-24 text-center border">{rate}</div>
-            <div className="w-36 text-center border">{(qty * rate).toFixed(2)}</div>
-            <div className="w-16 text-center border">{(((qty * rate) % 1 * 100).toString()+"00").slice(0, 2)}</div>
+            <div className="w-full border h-[22px]"><span className="px-2">{index + 1}.</span> {description}</div>
+            <div className="w-20 text-center border h-[22px]">{qty || null}</div>
+            <div className="w-24 text-center border h-[22px]">{rate || null}</div>
+            <div className="w-36 text-center border h-[22px]">{qty && rate ? (qty * rate).toFixed(2) : null}</div>
+            <div className="w-16 text-center border h-[22px]">{qty && rate ? (((qty * rate) % 1 * 100).toString()+"00").slice(0, 2) : null}</div>
         </div>
     )
 }
@@ -44,10 +49,10 @@ const TotalRow=({ totalQTY, totalAmount, totalCents }: { totalQTY: number; total
             <div className="w-full text-right flex justify-end items-center">
                 <div className="font-bold border w-fit px-4">Total:</div>
             </div>
-            <div className="w-20 text-center border">{totalQTY}</div>
-            <div className="w-24 text-center border"></div>
-            <div className="w-36 text-center border">{totalAmount.toFixed(2)}</div>
-            <div className="w-16 text-center border">{totalCents.toString().padStart(2, '0')}</div>
+            <div className="w-20 text-center border h-[22px]">{totalQTY}</div>
+            <div className="w-24 text-center border h-[22px]"></div>
+            <div className="w-36 text-center border h-[22px]">{totalAmount.toFixed(2)}</div>
+            <div className="w-16 text-center border h-[22px]">{totalCents.toString().padStart(2, '0')}</div>
         </div>
     )
 }
