@@ -24,7 +24,7 @@ const BillHeader=()=>{
             <div className="w-full h-fit flex justify-between items-center text-xs">
                 <div>
                     <div>
-                        Tel: +94 77 4200 919 / 071-2978922
+                        Tel: +94 77 4200 919 / 070 243 3566
                     </div>
                     <div>Email: lovelaundry01@gmail.com</div>
                 </div>
