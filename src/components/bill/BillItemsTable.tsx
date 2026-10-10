@@ -2,7 +2,8 @@ import { sampleBillInfo } from "../../data/constants";
 
 const BillItemsTable=()=>{
     return(
-        <div className="text-sm w-full h-full">
+        <div className="w-full overflow-x-auto">
+        <div className="text-sm min-w-[540px] w-full h-full">
             <div className="flex flex-row items-center justify-center w-full">
                 <div className="border w-full text-center h-[22px]">Description of Item</div>
                 <div className="border w-20 text-center h-[22px]">QTY</div>
@@ -25,6 +26,7 @@ const BillItemsTable=()=>{
             <div>
                 <TotalRow totalQTY={120} totalAmount={1200} totalCents={0} />
             </div>
+        </div>
         </div>
     )
 }

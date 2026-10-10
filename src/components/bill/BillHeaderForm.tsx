@@ -2,7 +2,7 @@ import { sampleBillInfo } from "../../data/constants";
 
 const BillHeaderForm = () => {
     return (
-        <div className="w-full flex gap-10 items-center justify-between">
+        <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-10 items-stretch sm:items-center justify-between">
             <div className="text-sm w-full">
                 <div className="flex w-full">
                     <span className="relative">Name:</span>
@@ -27,7 +27,7 @@ const BillHeaderForm = () => {
                 </div>
             </div>
 
-            <div className="w-80 h-full text-xs">
+            <div className="w-full sm:w-80 h-full text-xs">
                 <div className="border h-full grid grid-rows-2">
                     <div className="flex w-full">
                         <div className="w-24 border flex items-center justify-center">

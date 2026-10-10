@@ -7,7 +7,7 @@ const BillFooter=()=>{
             <div>
                 {
                     conditions.map((condition, index) => (
-                        <div key={index} className="text-[10px]">{condition}</div>
+                        <div key={index} className="text-xs">{condition}</div>
                     ))
                 }
             </div>
