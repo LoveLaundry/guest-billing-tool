@@ -1,6 +1,9 @@
 import { sampleBillInfo } from "../../data/constants";
+import { calculateBillTotals } from "../../data/billTotals.js";
 
 const BillItemsTable=()=>{
+    const totals = calculateBillTotals(sampleBillInfo.items);
+
     return(
         <div className="w-full overflow-x-auto">
         <div className="text-sm min-w-[540px] w-full h-full">
@@ -24,7 +27,7 @@ const BillItemsTable=()=>{
                 }
             </div>
             <div>
-                <TotalRow totalQTY={120} totalAmount={1200} totalCents={0} />
+                <TotalRow totalQTY={totals.quantity} totalAmount={totals.amountCents / 100} totalCents={0} />
             </div>
         </div>
         </div>
